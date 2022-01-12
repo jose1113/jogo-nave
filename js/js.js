@@ -418,3 +418,12 @@ function start() {
     } // Fim da função gameOver();
 
 }
+
+//Reinicia o Jogo
+		
+function reiniciaJogo() {
+	somGameover.pause()
+	$("#fim").remove()
+	start()
+	
+} //Fim da função reiniciaJogo
