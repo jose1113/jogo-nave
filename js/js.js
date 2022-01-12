@@ -188,15 +188,15 @@ function start() {
             if (colisao3.length > 0) {
                     
                     
-                inimigo1X = parseInt($("#inimigo1").css("left"));
-                inimigo1Y = parseInt($("#inimigo1").css("top"));
+                inimigo1X = parseInt($("#inimigo1").css("left"))
+                inimigo1Y = parseInt($("#inimigo1").css("top"))
                     
-                explosao1(inimigo1X,inimigo1Y);
-                $("#disparo").css("left",950);
+                explosao1(inimigo1X,inimigo1Y)
+                $("#disparo").css("left",950)
                     
-                posicaoY = parseInt(Math.random() * 334);
-                $("#inimigo1").css("left",694);
-                $("#inimigo1").css("top",posicaoY);
+                posicaoY = parseInt(Math.random() * 334)
+                $("#inimigo1").css("left",694)
+                $("#inimigo1").css("top",posicaoY)
                     
             }
 
@@ -212,6 +212,12 @@ function start() {
                 
                 reposicionaInimigo2()
                     
+            }
+
+            // jogador com o amigo
+            if (colisao5.length > 0) {
+                reposicionaAmigo()
+                $("#amigo").remove()
             }
         
         } //Fim da função colisao()
@@ -239,7 +245,6 @@ function start() {
 
         
     //Reposiciona Inimigo2
-	
 	function reposicionaInimigo2() {
 	
         var tempoColisao4=window.setInterval(reposiciona4, 5000)
@@ -248,20 +253,19 @@ function start() {
             window.clearInterval(tempoColisao4)
             tempoColisao4 = null
                 
-                if (fimdejogo == false) {
+            if (fimdejogo == false) {
+            
+                $("#fundoGame").append("<div id=inimigo2></div>")
+            
+            }
                 
-                $("#fundoGame").append("<div id=inimigo2></div")
-                
-                }
-                
-            }	
-        }
+        }	
+    }
 
     //Explosão2
-
 	function explosao2(inimigo2X,inimigo2Y) {
 	
-        $("#fundoGame").append("<div id='explosao2'></div")
+        $("#fundoGame").append("<div id='explosao2'></div>")
         $("#explosao2").css("background-image", "url(imgs/explosao.png)")
         var div2=$("#explosao2")
         div2.css("top", inimigo2Y)
@@ -282,10 +286,9 @@ function start() {
     } // Fim da função explosao2()
 
     //Reposiciona Amigo
-	
 	function reposicionaAmigo() {
 	
-        var tempoAmigo=window.setInterval(reposiciona6, 6000)
+        var tempoAmigo = window.setInterval(reposiciona6, 6000)
         
             function reposiciona6() {
             window.clearInterval(tempoAmigo)
